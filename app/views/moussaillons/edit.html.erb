@@ -1,0 +1,39 @@
+<div class="center jumbotron">
+	<h1> Edite le profil de <%= @moussaillon.first_name %> !</h1>
+
+	<ul>
+		<li> <strong>Prénom :</strong> <%= @moussaillon.first_name %> </li>
+		<li> <strong>Age :</strong> <%= @moussaillon.age %> </li>
+	</ul>
+
+	  <% render 'form' %>
+
+
+	  <%= form_tag(moussaillon_path, :method => :patch) do %>
+
+		  <%= label_tag 'first_name', 'Prénom' %>
+		  <%= text_field_tag 'first_name' %>
+
+		  <%= label_tag 'age', 'Ton age' %>
+		  <%= text_field_tag 'age' %>
+
+		<br>
+		<br>
+		<p> Que préfères-tu ? </p>
+		<table>
+		        <tr>
+		            <td><%= label_tag 'likeness', 'Kebab' %></td>
+		            <td><%= radio_button_tag 'likeness', true %></td>
+		        </tr>
+
+		        <tr>
+		            <td><%= label_tag 'likeness', 'Hummus' %></td>
+		            <td><%= radio_button_tag 'likeness', false %></td>
+		        </tr>
+		</table>
+
+		<%= submit_tag "Valider"%>
+
+	<% end %>
+
+</div>

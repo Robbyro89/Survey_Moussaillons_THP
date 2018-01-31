@@ -1,0 +1,24 @@
+<div class="center jumbotron">
+	<h1> Le profil de <%= @moussaillon.first_name%></h1>
+<ul>
+	<li> <strong>Prénom :</strong> <%= @cmoussaillon.first_name %> </li>
+	<li> <strong>Age :</strong> <%= @moussaillon.age %> </li>
+</ul>
+
+
+	<% unless @moussaillon.likeness == nil %>
+
+			<p> Tu préfères le </p>
+					<% if @moussaillon.likeness == true %>
+						<p>Kebab</p>
+					<%else %> <p>Hummus</p>
+					<% end %>
+	<%end%>
+
+
+<br><br><%= link_to "Editer", edit_moussaillon_path(@moussaillon) %> <br><br>
+<%= link_to "Supprimer", cmoussaillon_path(@moussaillon),
+              method: :delete,
+              data: { confirm: 'Es-tu sûr ?' } %><br><br>
+<%= link_to "Retour à l'index", index_path %>
+</div>

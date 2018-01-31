@@ -1,0 +1,19 @@
+<div class="center jumbotron">
+	<h1> Créée ton profil jeune moussaillon !</h1>
+	<br><br><br><br><br><br>
+
+	<% render 'form' %>
+
+
+  <%= form_tag (moussaillons_path) do %>
+
+  <%= label_tag 'first_name', 'Prénom' %>
+  <%= text_field_tag 'first_name' %>
+
+  <%= label_tag 'age', 'Ton age' %>
+  <%= text_field_tag 'age' %>
+
+  <%= submit_tag "Valider"%>
+<% end %>
+
+</div>

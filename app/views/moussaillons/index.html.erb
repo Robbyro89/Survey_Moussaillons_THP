@@ -1,0 +1,29 @@
+<div class="center jumbotron">
+<h1>La liste des moussaillons</h1>
+<p>Et voici !</p>
+
+<%if @moussaillons.count == 0 %>
+	<p>Pas encore de moussaillons dans la base</p>
+
+<% else %>
+  <% @moussaillons.each do |moussaillon| %>
+    <table style="width:80%">
+    	  <tr>
+		    <th> Prénom</th>
+		    <th> Age</th>
+		    <th> </th>
+		  </tr>
+    	  <tr>
+		   <td><strong><%=moussaillon.first_name%></strong></td>
+		   <td><%= corsair.age %>  ans<br></td>
+		   <td> <%= link_to 'voir le profil', moussaillon_path(corsair) %> <br></td>
+	    </tr>
+    </table>
+<br>
+<br>
+  <% end %>
+<% end %>
+
+<p> Pas encore enregistré ? </p>
+  <%= link_to "Enregistre-toi !", new_path, class: "btn btn-lg btn-primary" %>
+</div>
